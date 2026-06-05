@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Para Ti ❤️</title>
+
+    <style>
+        body{
+            background: linear-gradient(to bottom, #ffd1dc, #ffe6f0);
+            text-align:center;
+            font-family:Arial,sans-serif;
+        }
+
+        h1{
+            color:#ff1493;
+        }
+
+        #corazon{
+            font-size:220px;
+            cursor:pointer;
+            user-select:none;
+            transition:0.3s;
+        }
+
+        #corazon:hover{
+            transform:scale(1.1);
+        }
+
+        #porcentaje{
+            font-size:40px;
+            font-weight:bold;
+            color:#ff1493;
+        }
+
+        #mensaje{
+            display:none;
+            font-size:45px;
+            color:#ff0066;
+            font-weight:bold;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💖 Haz clic en el corazón 💖</h1>
+
+    <div id="corazon">🤍</div>
+
+    <p id="porcentaje">0%</p>
+
+    <div id="mensaje">
+        💕 TE AMO MUCHO 💕<br>
+        🌹 ERES MUY ESPECIAL PARA MÍ, Mi niña,Gacias por existir 🌹
+    </div>
+
+<script>
+
+let amor = 0;
+
+const corazones = [
+    "🤍",
+    "🩷",
+    "💗",
+    "💖",
+    "💝",
+    "❤️"
+];
+
+document.getElementById("corazon").onclick = function(){
+
+    if(amor < 100){
+
+        amor += 20;
+
+        document.getElementById("porcentaje").innerHTML = amor + "%";
+
+        let nivel = amor / 20;
+
+        document.getElementById("corazon").innerHTML =
+            corazones[Math.min(nivel,5)];
+    }
+
+    if(amor >= 100){
+        document.getElementById("mensaje").style.display = "block";
+    }
+}
+
+</script>
+
+</body>
+</html>
